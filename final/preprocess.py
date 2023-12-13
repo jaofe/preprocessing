@@ -21,9 +21,9 @@ df = df.dropna()
 
 #Agrupamento
 def apply_grouping(df):
-    df['Pregnancies'] = pd.cut(df['Pregnancies'], bins=[-float('inf'), 4, float('inf')], labels=[1, 3])
+    df['Pregnancies'] = pd.cut(df['Pregnancies'], bins=[-float('inf'), 4, float('inf')], labels=[1, 2])
     df['Glucose'] = pd.cut(df['Glucose'], bins=[-float('inf'), 140, 199, float('inf')], labels=[1, 3, 5])
-    df['BMI'] = pd.cut(df['BMI'], bins=[-float('inf'), 25, 30, float('inf')], labels=[1, 3, 4])
+    df['BMI'] = pd.cut(df['BMI'], bins=[-float('inf'), 25, 30, float('inf')], labels=[1, 2, 3])
     df['DiabetesPedigreeFunction'] = pd.cut(df['DiabetesPedigreeFunction'], bins=[-float('inf'), 0.5, 1.5, 2, float('inf')],
                                              labels=[1, 2, 3, 4])
     df['Age'] = pd.cut(df['Age'], bins=[-float('inf'), 35, 50, 60, float('inf')], labels=[0.5, 1, 1.5, 2])
